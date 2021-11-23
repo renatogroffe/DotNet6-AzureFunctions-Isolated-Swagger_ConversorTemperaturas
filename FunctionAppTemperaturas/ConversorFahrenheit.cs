@@ -21,7 +21,7 @@ public class ConversorFahrenheit
     [Function(nameof(ConversorFahrenheit))]
     [OpenApiOperation(operationId: "ConversorTemperaturas", tags: new[] { "Temperaturas" })]
     [OpenApiSecurity("function_key", SecuritySchemeType.ApiKey, Name = "code", In = OpenApiSecurityLocationType.Query)]
-    [OpenApiParameter(name: "temperaturaFahrenheit", In = ParameterLocation.Path, Required = true, Type = typeof(string), Description = "Temperatura em graus Fahrenheit")]
+    [OpenApiParameter(name: "temperaturaFahrenheit", In = ParameterLocation.Path, Required = true, Type = typeof(double), Description = "Temperatura em graus Fahrenheit")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(Temperatura), Description = "Resultado da conversão de uma temperatura em Fahrenheit")]
     [OpenApiResponseWithBody(statusCode: HttpStatusCode.BadRequest, contentType: "application/json", bodyType: typeof(FalhaConversao), Description = "Falha na conversão de uma temperatura em Fahrenheit")]
 
